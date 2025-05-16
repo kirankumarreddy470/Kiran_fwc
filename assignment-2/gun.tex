@@ -1,0 +1,91 @@
+
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\geometry{margin=1in}
+\begin{document}
+\begin{figure}[h!]
+    \begin{minipage}{0.45\textwidth}  % Set the width of the image
+        \includegraphics[width=\textwidth]{/storage/emulated/0/vinod/IMG-20250515-WA0024.png}  % Replace 'image.png' with your image file name
+    \end{minipage} \hfill
+    \begin{minipage}{0.45\textwidth}  % Set the width of the text block
+        \textbf{Name : Kiran Kumar Reddy L} \\
+    \textbf{id : cometfwc027} \\
+  \textbf{Date : 15th may 2025}
+    \end{minipage}
+\end{figure}
+
+\noindent Q.6 \quad The minterm expansion of $f(P, Q, R) = PQ + Q\overline{R} + P\overline{R}$ is
+\begin{itemize}
+    \item[(A)] $m_2 + m_4 + m_6 + m_7$
+    \item[(B)] $m_0 + m_1 + m_4 + m_5$
+    \item[(C)] $m_0 + m_1 + m_6 + m_7$
+    \item[(D)] $m_2 + m_3 + m_1 + m_3$
+\end{itemize}
+
+\section*{Detailed Solution}
+
+Given function:
+\[
+f(P, Q, R) = PQ + Q\overline{R} + P\overline{R}
+\]
+
+We are to find its minterm expansion.
+
+\subsection*{Step 1: Expand each term to include all variables}
+
+\textbf{Term 1:} $PQ$ \\
+This term is independent of $R$, so we expand it as:
+\[
+PQ = PQ(R + \overline{R}) = PQR + PQ\overline{R}
+\]
+
+\textbf{Term 2:} $Q\overline{R}$ \\
+This term is independent of $P$, so we expand it as:
+\[
+Q\overline{R} = PQ\overline{R} + \overline{P}Q\overline{R}
+\]
+
+\textbf{Term 3:} $P\overline{R}$ \\
+This term is independent of $Q$, so we expand it as:
+\[
+P\overline{R} = PQ\overline{R} + P\overline{Q}\overline{R}
+\]
+
+\subsection*{Step 2: Combine all terms}
+
+\begin{align*}
+f(P, Q, R) &= PQR + PQ\overline{R} + PQ\overline{R} + \overline{P}Q\overline{R} + PQ\overline{R} + P\overline{Q}\overline{R} \\
+&= PQR + PQ\overline{R} + \overline{P}Q\overline{R} + P\overline{Q}\overline{R}
+\end{align*}
+
+(Note: $PQ\overline{R}$ appeared multiple times but is considered only once.)
+
+\subsection*{Step 3: Identify minterm indices}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+P & Q & R & Expression & Minterm \\
+\hline
+1 & 1 & 1 & $PQR$ & $m_7$ \\
+1 & 1 & 0 & $PQ\overline{R}$ & $m_6$ \\
+0 & 1 & 0 & $\overline{P}Q\overline{R}$ & $m_2$ \\
+1 & 0 & 0 & $P\overline{Q}\overline{R}$ & $m_4$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{Step 4: Final Answer}
+
+Thus, the minterm expansion of the function is:
+\[
+f(P, Q, R) = m_2 + m_4 + m_6 + m_7
+\]
+
+\noindent \textbf{Correct Option:} (A) $m_2 + m_4 + m_6 + m_7$
+
+\end{document}
+
