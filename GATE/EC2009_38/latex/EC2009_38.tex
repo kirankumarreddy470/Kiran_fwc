@@ -1,0 +1,105 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\title{\textbf{IMPLEMENTATION OF NAND NOR LATCH USING ARDUINO AND LEDS}}
+
+\author{
+\begin{tabular}{c}
+\hspace{-5cm}\textbf{L. Kiran Kumar Reddy} \\
+\hspace{-5cm}\texttt{levaku.fwc1@iiitb.ac.in} \\
+\textbf{\hspace{-2cm}COMETFWC027  IITB Future Wireless Communication (FWC) ASSIGNMENT}
+\end{tabular}
+}
+
+\date{July 06, 2025}
+
+\begin{document}
+%\includegraphics[width=\linewidth]{/storage/emulated/0/test/IMG-20250515-WA002}
+\maketitle
+
+% ---------- First Page ----------
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.48\textwidth}
+    \section*{Question}
+    \small
+    \noindent\textbf{Q.38} \quad Refer to the NAND and NOR latches shown in the figure. The inputs ($P_1$, $P_2$) for both the latches are first made (0,1) and then, after a few seconds, made (1,1). The corresponding stable outputs ($Q_1$, $Q_2$) are observed.
+
+    \vspace{0.3cm}
+    \includegraphics[width=\linewidth]{/storage/emulated/0/test/IMG_20250708_150815.png} 
+
+    \vspace{0.5cm}
+    \section*{Truth Table for NAND and NOR Latch}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      \textbf{Latch Type} & \textbf{$P_1$} & \textbf{$P_2$} & \textbf{$Q_1$} & \textbf{$Q_2$} & \textbf{State} \\
+      \hline
+      NAND & 0 & 1 & 1 & 0 & Set \\
+      NAND & 1 & 1 & 1 & 0 & Hold (Set) \\
+      \hline
+      NOR & 0 & 1 & 1 & 0 & Reset \\
+      NOR & 1 & 1 & 0 & 0 & Invalid \\
+      \hline
+    \end{tabular}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \section*{Components}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|l|l|l|}
+      \hline
+      \textbf{Component} & \textbf{Value} & \textbf{Quantity} \\ \hline
+      Arduino Board & -- & 1 \\ \hline
+      Jumper Wires & M-F & 10 \\ \hline
+      Push Buttons & -- & 2 \\ \hline
+      Breadboard & -- & 1 \\ \hline
+      USB Cable & -- & 1 \\ \hline
+      LED & -- & 2 \\ \hline
+      Resistors & 220~$\Omega$, 10k~$\Omega$ & 2, 2 \\ \hline
+    \end{tabular}
+
+    \vspace{0.8cm}
+    \section*{Setup}
+    \small
+    \begin{enumerate}[left=0pt]
+      \item Connect push button P1 to digital pin D2 with a 10k$\Omega$ pull-down resistor.
+      \item Connect push button P2 to digital pin D3 with a 10k$\Omega$ pull-down resistor.
+      \item Connect LED Q1 to digital pin D12 through a 220$\Omega$ resistor to ground.
+      \item Connect LED Q2 to digital pin D13 through a 220$\Omega$ resistor to ground.
+      \item Upload latch emulation code to Arduino to simulate NAND latch behavior using inputs P1 and P2.
+    \end{enumerate}
+  \end{minipage}
+\end{figure}
+
+% ---------- Second Page with Left-aligned Implementation ----------
+
+\newpage
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.48\textwidth}
+    \section*{Implementation}
+    \small
+    \begin{enumerate}[left=0pt]
+      \item Define digital pins D2 and D3 as inputs for buttons P1 and P2.
+      \item Define digital pins D12 and D13 as outputs for LEDs Q1 and Q2.
+      \item Use \texttt{pinMode()} in \texttt{setup()} to configure input and output pins.
+      \item In \texttt{loop()}, read inputs P1 and P2 using \texttt{digitalRead()} and apply NAND or NOR latch logic.
+      \item Use \texttt{digitalWrite()} to display Q1 and Q2 states on LEDs according to the selected latch type.
+    \end{enumerate}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    % Right side left intentionally blank or for future use
+  \end{minipage}
+\end{figure}
+
+\end{document}
